@@ -23,7 +23,7 @@ def get_initial_tasks(job_description):
 
 def get_final_ideas(initial_tasks):
     messages = [
-        {"role": "system", "content": "You are an AI Brainstorm assistant. Given the initial tasks, identify what large language model capabilities from this list can help. Then come up with the Top 10 ideas based on these tasks."},
+        {"role": "system", "content": "You are an AI Brainstorm assistant. Given the initial tasks, identify what large language model capabilities from this list can help. Then come up with the Top 10 ideas based on these tasks. Be succinct. Format in a markdown table with the relevant columns."},
         {"role": "user", "content": f"Initial Tasks: {initial_tasks}\\nLLM Capabilities: {LLM_CAPABILITIES}"}
     ]
 
