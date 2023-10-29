@@ -38,6 +38,6 @@ LLM_CAPABILITIES = {
         "Generate ideas": "Come up with new concepts or solutions.",
         "Generate hypotheses": "Propose possible explanations that can be tested through experimentation.",
         "Generate customer profiles": "Create detailed descriptions of customer types based on data.",
-        "Generate scenarios": "Devise hypothetical situations for planning or testing purposes."
+        "Generate scenarios": "Devise hypothetical situations for planning or testing purposes ."
     }
 }
