@@ -5,7 +5,7 @@ def main():
     st.title("Optimize Your Job with AI")
 
     job_description = st.session_state.get('job_description', '')
-    user_feedback = st.session_state.get('user_feedback', '')
+    user_feedback = st.session_state.get('user_feedback', None)
     initial_tasks = st.session_state.get('initial_tasks', [])
     refined_tasks = st.session_state.get('refined_tasks', [])
 
@@ -19,11 +19,11 @@ def main():
         for i, task in enumerate(initial_tasks, 1):
             st.write(f"{i}. {task}")
 
-        user_feedback = st.text_area("Provide your feedback on the tasks:", user_feedback)
-        st.session_state['user_feedback'] = user_feedback
+        user_feedback = st.text_area("Provide your feedback on the tasks (optional):", user_feedback)
+        st.session_state['user_feedback'] = user_feedback if user_feedback else None
 
         if st.button("Refine Tasks"):
-            refined_tasks = get_refined_tasks(st.session_state['job_description'], initial_tasks, user_feedback)
+            refined_tasks = get_refined_tasks(st.session_state['job_description'], initial_tasks, st.session_state['user_feedback'])
             st.session_state['refined_tasks'] = refined_tasks
             st.subheader("Refined Tasks for Your Job")
             for i, task in enumerate(refined_tasks, 1):
