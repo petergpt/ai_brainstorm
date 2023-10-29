@@ -7,7 +7,7 @@ openai.api_key = api_key
 
 def get_initial_tasks(job_description):
     messages = [
-        {"role": "system", "content": "You are a AI Brainstorm assistant. Before you identify ideas for AI, you need to identify the relevant tasks that a person does in their role. You are provided with a job description by the user. Identify the key tasks that this person typically does in their job, with the AI application in mind. Be succinct"},
+        {"role": "system", "content": "You are a AI Brainstorm assistant. Before you identify ideas for AI, you need to identify the relevant tasks that a person does in their role. You are provided with a job description by the user. Identify the key tasks that this person typically does in their job, with the AI application in mind. Be succinct and clear"},
         {"role": "user", "content": f"Here's the job description: {job_description}"}
     ]
 
