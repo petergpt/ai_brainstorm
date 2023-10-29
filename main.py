@@ -11,7 +11,7 @@ def main():
     if 'final_ideas' not in st.session_state:
         st.session_state.final_ideas = ''
 
-    job_description = st.text_area("Please describe what you do in your job:", st.session_state.job_description)
+    job_description = st.text_area("Please describe what you do in your job :", st.session_state.job_description)
 
     if st.button("Identify Tasks"):
         with st.spinner('Identifying tasks...'):
