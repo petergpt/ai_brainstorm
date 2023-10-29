@@ -25,7 +25,7 @@ def get_initial_tasks(job_description):
 
 def get_final_ideas(initial_tasks):
     messages = [
-        {"role": "system", "content": "You are an AI Brainstorm assistant. Given the tasks, identify what large language model capabilities from this list of pre-defined capabilities can help in defining ideas. Then come up with the Top 10 ideas based on these tasks. Be succinct. Format in a markdown table with the following columns: Number, Task, LLM Capability, Idea."},
+        {"role": "system", "content": "You are an AI Brainstorm assistant. Given the tasks, identify what large language model capabilities from this list of pre-defined capabilities can help in defining ideas. Then come up with the Top 10 ideas based on these tasks, number each idea. Be succinct. Format in a markdown table with the following columns: #, Task, LLM Capability, Idea."},
         {"role": "user", "content": f"Initial Tasks: {initial_tasks}\\nLLM Capabilities: {LLM_CAPABILITIES}"}
     ]
 
@@ -33,7 +33,7 @@ def get_final_ideas(initial_tasks):
         model="gpt-4",
         messages=messages,
         temperature=0.7,
-        max_tokens=500
+        max_tokens=700
     )
 
     final_ideas = response['choices'][0]['message']['content']
