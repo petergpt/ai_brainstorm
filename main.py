@@ -1,7 +1,7 @@
 import streamlit as st
 from api_logic import get_initial_tasks, get_final_ideas
 
-st.set_page_config(page_title="How can AI help your job? 🤖", page_icon=":robot_face:")
+st.set_page_config(page_title="How can AI help your job? 🤖", page_icon="🤖")
 
 def main():
     st.title("How can AI help your job?")
