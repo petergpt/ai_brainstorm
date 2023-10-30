@@ -1,6 +1,11 @@
 import streamlit as st
 from api_logic import get_initial_tasks, get_final_ideas
 
+st.set_page_config(
+    page_title="AI to Brainstorm AI tasks",
+    page_icon=":robot_face:",
+)
+
 def main():
     st.title("How can you apply LLMs to your job?")
 
@@ -26,6 +31,8 @@ def main():
 
         st.subheader("Ideas for Applying Tasks")
         st.markdown(st.session_state.final_ideas)
+
+st.markdown("Built by Peter Gostev(https://www.linkedin.com/in/peter-gostev-53058417/)")
 
 if __name__ == "__main__":
     main()
